@@ -1,0 +1,139 @@
+$color-accent: #102E32;
+$ts: all 0.4s;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    all: unset;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    background-image: radial-gradient(ellipse, #25ABAD, #13282B);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter {
+    background-color:#00FBFF;
+    width: 476px;
+    height: 615px;
+    border-radius: 12px;
+    box-shadow: 0 25px 121px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: $ts;
+
+    &__title{
+        opacity: 0.6;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        width: 200px;
+        text-align: center;
+        line-height: 0.9;
+        font-weight: 500;
+        font-size: 32px;
+        margin-top: 60px;
+    }
+
+    &__value {
+        color: $color-accent;
+        font-size: 200px;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+
+    &__reset-button {
+        cursor: pointer;
+    }
+
+    &__reset-icon {
+        opacity: 0.3;
+        font-size: 35px;
+        transition: $ts;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+
+    &__buttons {
+        background-color: $color-accent;
+        height: 116px;
+        width: 100%;
+        margin-top: auto;
+        
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    &__button {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: $ts;
+
+        &:hover {
+            background-color: #193e44;
+        }
+    
+        &--decrease {
+
+        }
+
+        &--increase {
+            border-left: 1px solid rgba(56, 208, 227, 0.15);
+        }
+    }
+
+
+    &__icon {
+        color: #00FBFF;
+        opacity: 0.9;
+        font-size: 40px;
+
+        &--minus {
+
+        }
+
+        &--plus {
+
+        }
+    }
+
+}
+
+.counter--limit {
+    background-color: #00E0E3;
+}
+
+@media (max-width: 680px) or (max-height:730px) {
+    .counter {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+
+        &__title {
+            margin-top: 100px;
+        }
+
+        &__buttons {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+
+        }
+    }
+}
