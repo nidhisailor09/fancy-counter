@@ -9,7 +9,7 @@ const counterValueEl = document.querySelector('.counter__value')
 //We can use same const names for both event bcoz they are scoped
 
 //INCREMENT
-function incrementCounter() {
+const incrementCounter = () => {
     const currentValue = counterValueEl.textContent;  //get current value of counter
     const currentValueAsNumber = +currentValue; //convert value to number type
     let newValue = currentValueAsNumber + 1; //increment by 1
@@ -37,7 +37,7 @@ document.addEventListener('keydown',incrementCounter);
 
 
 //DECREMENT
-function decrementCounter() {
+const decrementCounter = () => {
    const currentValue = counterValueEl.textContent;    //get current value of counter
    const currentValueAsNumber = +currentValue;   //convert value to number type
    let newValue = currentValueAsNumber - 1;    //decrement by 1
@@ -53,7 +53,7 @@ decreaseButtonEl.addEventListener('click', decrementCounter);
 
 
 //RSEET
-resetButonEl.addEventListener('click',function(){
+resetButonEl.addEventListener('click', () => {
     //set counter value to zeop
     counterValueEl.textContent = 0;
 
